@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error!</title>
+
+    <link href="{{ url_for('static', filename='css/template.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>Ooops!</h1>
+<p>You have selected the incorrect file type. This application only supports .png, .jpg or .jpeg, please try again.</p>
+
+<p><a href="{{ url_for('home') }}">Go back</a></p>
+
+</body>
+</html>

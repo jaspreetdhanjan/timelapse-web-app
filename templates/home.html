@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <link href="{{ url_for('static', filename='css/template.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>Generating your Timelapse</h1>
+<p>Please select the timelapse files and select your desired configuration for the timelapse. The output video
+    will be delivered as a downloadable .mp4 video.</p>
+
+<form action="{{ url_for('handle_data') }}" method="POST" enctype="multipart/form-data">
+    <input type="file" id="files" name="files" multiple>
+
+    <br>
+
+    <select id="preferences" name="preferences">
+        <option value="uniform-sampling">Uniform Sampling</option>
+        <option value="uniform-sampling-wmt">Uniform Sampling with Motion Tails</option>
+        <option value="non-uniform-sampling">Non-uniform Sampling</option>
+        <option value="non-uniform-sampling-wmt">Non-uniform Sampling with Motion Tails</option>
+    </select>
+
+    <br>
+
+    <input type="submit" value="Make timelapse!">
+</form>
+
+<hr>
+
+<h1>Generating your Hyperlapse</h1>
+<p>Instead, choose a search term. The hyperlapse engine will use Bing to retrieve data for this hyperlapse.</p>
+
+<form action="{{ url_for('handle_search') }}" method="POST" enctype="multipart/form-data">
+    <label>Search term: </label><input type="text" id="bing-search" name="bing-search" value="">
+    <label>Frames: </label><input type="text" id="frame-count" name="frame-count" value="100">
+    <input type="submit" value="Make hyperlapse!">
+</form>
+
+</body>
+</html>

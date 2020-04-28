@@ -1,0 +1,20 @@
+body {
+    font-family: "Open Sans", Arial, Helvetica, Sans-Serif, serif;
+    text-align: center;
+}
+
+form {
+    border: 1px black solid;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 50px;
+    margin: 50px;
+}
+
+form > * {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: center;
+    margin-top: 10px;
+}
